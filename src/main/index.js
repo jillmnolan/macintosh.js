@@ -1,11 +1,10 @@
-const { app, BrowserWindow } = require("electron");
-
-const { registerIpcHandlers } = require("./ipc");
-const { createWindow } = require("./windows");
-const { getIsDevMode } = require("./devmode");
-const { shouldQuit } = require("./squirrel");
-const { setupUpdates } = require("./update");
-const { moveToAppFolderMaybe } = require("./appfolder");
+import { app, BrowserWindow } from "electron";
+import { registerIpcHandlers } from "./ipc";
+import { createWindow } from "./windows";
+import { getIsDevMode } from "./devmode";
+import { shouldQuit } from "./squirrel";
+import { setupUpdates } from "./update";
+import { moveToAppFolderMaybe } from "./appfolder";
 
 async function onReady() {
   if (!getIsDevMode()) process.env.NODE_ENV = "production";

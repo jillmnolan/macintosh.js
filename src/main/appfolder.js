@@ -1,4 +1,4 @@
-const { app, dialog } = require("electron");
+import { app, dialog } from "electron";
 
 // If the app doesn't run from the /Applications folder,
 // we don't get to create files, which keeps the emulator from
@@ -41,6 +41,6 @@ function moveToAppFolderMaybe() {
   }
 }
 
-module.exports = {
+export default {
   moveToAppFolderMaybe,
 };

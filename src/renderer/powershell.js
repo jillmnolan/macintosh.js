@@ -1,4 +1,4 @@
-const { spawn } = require("child_process");
+import { spawn } from "child_process";
 
 function runPowerShell(command) {
   return new Promise((resolve) => {
@@ -37,6 +37,6 @@ function runPowerShell(command) {
   });
 }
 
-module.exports = {
+export default {
   runPowerShell,
 };

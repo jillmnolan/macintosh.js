@@ -1,12 +1,12 @@
-const { inputBuffer, INPUT_BUFFER_SIZE } = require("./input");
-const { videoModeBuffer, VIDEO_MODE_BUFFER_SIZE } = require("./video");
-const { setCanvasBlank } = require("./screen");
+const { inputBuffer, INPUT_BUFFER_SIZE } = require("./input").default;
+const { videoModeBuffer, VIDEO_MODE_BUFFER_SIZE } = require("./video").default;
+const { setCanvasBlank } = require("./screen").default;
 const {
   screenBuffer,
   SCREEN_BUFFER_SIZE,
   SCREEN_WIDTH,
   SCREEN_HEIGHT,
-} = require("./screen");
+} = require("./screen").default;
 const {
   audio,
   audioDataBuffer,

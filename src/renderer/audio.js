@@ -1,4 +1,4 @@
-const { LockStates } = require("./atomics");
+import { LockStates } from "./atomics";
 
 var audio = {
   channels: 1,
@@ -213,7 +213,7 @@ function openAudio() {
   audio.timer = setTimeout(audio.caller, 1);
 }
 
-module.exports = {
+export default {
   audio,
   audioDataBuffer,
   audioContext,

@@ -1,7 +1,7 @@
-const { quit, devtools } = require("./ipc");
-const { getIsWorkerRunning, getIsWorkerSaving } = require("./worker");
-const { showCloseWarning } = require("./dialogs");
-const { getIsDevMode } = require("./ipc");
+import { quit, devtools } from "./ipc";
+import { getIsWorkerRunning, getIsWorkerSaving } from "./worker";
+import { showCloseWarning } from "./dialogs";
+import { getIsDevMode } from "./ipc";
 
 async function registerControls() {
   document.querySelector("#close").addEventListener("click", () => {

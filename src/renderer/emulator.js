@@ -1,8 +1,8 @@
-const { drawScreen } = require("./screen");
-const { openAudio } = require("./audio");
-const { tryToSendInput } = require("./input");
-const { registerWorker, setCanvasBlank } = require("./worker");
-const { setupDialogs } = require("./dialogs");
+import { drawScreen } from "./screen";
+import { openAudio } from "./audio";
+import { tryToSendInput } from "./input";
+import { registerWorker, setCanvasBlank } from "./worker";
+import { setupDialogs } from "./dialogs";
 
 function asyncLoop() {
   drawScreen();

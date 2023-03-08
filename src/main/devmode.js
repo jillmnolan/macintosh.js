@@ -1,9 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-const { app } = require("electron");
+import { existsSync, writeFileSync, unlinkSync } from "fs";
+import { join } from "path";
+import { app } from "electron";
 
 const appDataPath = app.getPath("userData");
-const devFilePath = path.join(appDataPath, "developer");
+const devFilePath = join(appDataPath, "developer");
 
 let isDevMode;
 
@@ -12,23 +12,23 @@ function getIsDevMode() {
     return isDevMode;
   }
 
-  return (isDevMode = !app.isPackaged || fs.existsSync(devFilePath));
+  return (isDevMode = !app.isPackaged || existsSync(devFilePath));
 }
 
 function setIsDevMode(set) {
   if (set && !getIsDevMode()) {
-    fs.writeFileSync(
+    writeFileSync(
       devFilePath,
       `So you're a developer, huh? Neat! Welcome aboard!`
     );
   } else if (!set && getIsDevMode()) {
-    fs.unlinkSync(devFilePath);
+    unlinkSync(devFilePath);
   }
 
   isDevMode = set;
 }
 
-module.exports = {
+export default {
   getIsDevMode,
   setIsDevMode,
 };

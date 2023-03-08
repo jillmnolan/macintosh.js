@@ -1,7 +1,7 @@
-const { app, BrowserWindow, shell } = require("electron");
-const path = require("path");
+import { app, BrowserWindow, shell } from "electron";
+import { join } from "path";
 
-const { getIsDevMode } = require("./devmode");
+import { getIsDevMode } from "./devmode";
 
 const windowList = {};
 let mainWindow;
@@ -74,7 +74,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, "../renderer/index.html"));
+  mainWindow.loadFile(join(__dirname, "../renderer/index.html"));
 
   // Disable menu
   mainWindow.setMenu(null);
@@ -87,7 +87,7 @@ function createWindow() {
   }
 }
 
-module.exports = {
+export default {
   createWindow,
   getMainWindow,
 };

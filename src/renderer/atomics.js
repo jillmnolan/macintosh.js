@@ -37,7 +37,7 @@ function releaseLock(bufferView, lockIndex) {
   Atomics.notify(bufferView, lockIndex);
 }
 
-module.exports = {
+export default {
   acquireTwoStateLock,
   releaseTwoStateLock,
   acquireLock,

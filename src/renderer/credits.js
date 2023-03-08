@@ -1,11 +1,11 @@
-const { shell, ipcRenderer } = require("electron");
-const path = require("path");
+import { shell, ipcRenderer } from "electron";
+import { join } from "path";
 
-const { getAppVersion } = require("./ipc");
+import { getAppVersion } from "./ipc";
 
 async function credits() {
   license.onclick = () => {
-    const licensePath = path.join(__dirname, "../basilisk/LICENSE.txt");
+    const licensePath = join(__dirname, "../basilisk/LICENSE.txt");
     shell.openPath(licensePath);
   };
 

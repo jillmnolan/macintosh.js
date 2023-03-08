@@ -2,6 +2,6 @@ function shouldQuit() {
   return require("electron-squirrel-startup");
 }
 
-module.exports = {
+export default {
   shouldQuit,
 };

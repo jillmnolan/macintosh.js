@@ -1,27 +1,20 @@
-const { ipcRenderer } = require("electron");
+import { ipcRenderer } from "electron";
 
-module.exports = {
-  quit() {
-    ipcRenderer.invoke("quit");
-  },
-
-  devtools() {
-    ipcRenderer.invoke("devtools");
-  },
-
-  getIsDevMode() {
-    return ipcRenderer.invoke("getIsDevMode");
-  },
-
-  setIsDevMode() {
-    return ipcRenderer.invoke("setIsDevMode");
-  },
-
-  getAppVersion() {
-    return ipcRenderer.invoke("getAppVersion");
-  },
-
-  getUserDataPath() {
-    return ipcRenderer.invoke("getUserDataPath");
-  },
-};
+export function quit() {
+  ipcRenderer.invoke("quit");
+}
+export function devtools() {
+  ipcRenderer.invoke("devtools");
+}
+export function getIsDevMode() {
+  return ipcRenderer.invoke("getIsDevMode");
+}
+export function setIsDevMode() {
+  return ipcRenderer.invoke("setIsDevMode");
+}
+export function getAppVersion() {
+  return ipcRenderer.invoke("getAppVersion");
+}
+export function getUserDataPath() {
+  return ipcRenderer.invoke("getUserDataPath");
+}

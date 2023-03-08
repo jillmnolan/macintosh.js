@@ -1,5 +1,5 @@
-const { videoModeBufferView } = require("./video");
-const { audioContext } = require("./audio");
+import { videoModeBufferView } from "./video";
+import { audioContext } from "./audio";
 
 const SCREEN_WIDTH = 800;
 const SCREEN_HEIGHT = 600;
@@ -64,7 +64,7 @@ function setCanvasBlank() {
   });
 }
 
-module.exports = {
+export default {
   screenBuffer,
   screenBufferView,
   SCREEN_BUFFER_SIZE,

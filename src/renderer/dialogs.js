@@ -1,4 +1,4 @@
-const { quit } = require("./ipc");
+import { quit } from "./ipc";
 
 function setupDialogs() {
   // Still empty
@@ -18,7 +18,7 @@ function showCloseWarning() {
   warningDialog.classList.remove("hidden");
 }
 
-module.exports = {
+export default {
   setupDialogs,
   showCloseWarning,
 };

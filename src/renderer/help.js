@@ -1,8 +1,8 @@
-const { shell, ipcRenderer } = require("electron");
-const path = require("path");
-const fs = require("fs");
+import { shell, ipcRenderer } from "electron";
+import { join } from "path";
+import { existsSync, mkdirSync } from "fs";
 const homedir = require("os").homedir();
-const macDir = path.join(homedir, "macintosh.js");
+const macDir = join(homedir, "macintosh.js");
 
 let isDevTools;
 
@@ -12,9 +12,9 @@ function fetchIsDevTools() {
     isDevTools = result;
 
     if (result) {
-      devtools.innerHTML = "Disable developer tools";
+      isDevTools.innerHTML = "Disable developer tools";
     } else {
-      devtools.innerHTML = "Enable developer tools";
+      isDevTools.innerHTML = "Enable developer tools";
     }
   });
 }
@@ -22,8 +22,8 @@ function fetchIsDevTools() {
 async function help() {
   user_dir.onclick = user_dir2.onclick = () => {
     try {
-      if (!fs.existsSync(macDir)) {
-        fs.mkdirSync(macDir);
+      if (!existsSync(macDir)) {
+        mkdirSync(macDir);
       }
 
       shell.showItemInFolder(macDir);
@@ -36,7 +36,7 @@ async function help() {
     }
   };
 
-  devtools.onclick = async () => {
+  isDevTools.onclick = async () => {
     await ipcRenderer.invoke("setIsDevMode", !isDevTools);
     fetchIsDevTools();
   };

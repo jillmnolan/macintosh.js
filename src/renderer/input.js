@@ -1,4 +1,4 @@
-const { acquireLock, releaseLock } = require("./atomics");
+import { acquireLock, releaseLock } from "./atomics";
 
 const INPUT_BUFFER_SIZE = 100;
 const inputBuffer = new SharedArrayBuffer(INPUT_BUFFER_SIZE * 4);
@@ -98,7 +98,7 @@ window.addEventListener("keyup", function (event) {
   inputQueue.push({ type: "keyup", keyCode: event.keyCode });
 });
 
-module.exports = {
+export default {
   INPUT_BUFFER_SIZE,
   inputBuffer,
   inputBufferView,

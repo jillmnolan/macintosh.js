@@ -1,12 +1,12 @@
-const fs = require('fs/promises')
-const path = require('path')
-const fetch = require('node-fetch')
+import { readFile } from 'fs/promises';
+import { join } from 'path';
+import fetch from 'node-fetch';
 
 const LINK_RGX = /(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?/g;
 
 async function main() {
-  const readmePath = path.join(__dirname, '../README.md')
-  const readme = await fs.readFile(readmePath, 'utf-8')
+  const readmePath = join(__dirname, '../README.md')
+  const readme = await readFile(readmePath, 'utf-8')
   const links = readme.match(LINK_RGX)
   let failed = false
 

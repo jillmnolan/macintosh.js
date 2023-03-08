@@ -1,6 +1,6 @@
-const { ipcMain, app, BrowserWindow, dialog } = require("electron");
-const { setIsDevMode, getIsDevMode } = require("./devmode");
-const { getMainWindow } = require("./windows");
+import { ipcMain, app, BrowserWindow, dialog } from "electron";
+import { setIsDevMode, getIsDevMode } from "./devmode";
+import { getMainWindow } from "./windows";
 
 function registerIpcHandlers() {
   ipcMain.handle("quit", () => app.quit());
@@ -36,6 +36,6 @@ function registerIpcHandlers() {
   });
 }
 
-module.exports = {
+export default {
   registerIpcHandlers,
 };

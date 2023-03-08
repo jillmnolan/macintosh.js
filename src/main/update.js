@@ -1,4 +1,4 @@
-const { app } = require("electron");
+import { app } from "electron";
 
 function setupUpdates() {
   if (app.isPackaged && process.platform !== "linux") {
@@ -9,6 +9,6 @@ function setupUpdates() {
   }
 }
 
-module.exports = {
+export default {
   setupUpdates,
 };
