@@ -1,9 +1,36 @@
 {
+  "author": {
+    "name": "Felix Rieseberg",
+    "email": "felix@felixrieseberg.com"
+  },
+  "config": {
+    "forge": "./forge.config.ts"
+  },
+  "dependencies": {
+    "@electron-forge/template-typescript": "^6.0.0-beta.67",
+    "@types/lodash": "^4.14.191",
+    "electron-squirrel-startup": "^1.0.0",
+    "source-map-loader": "^4.0.1",
+    "ts-loader": "^9.4.2",
+    "update-electron-app": "^2.0.1"
+  },
+  "description": "Macintosh's System 8 in an Electron app. I'm sorry.",
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.54",
+    "@electron-forge/maker-deb": "6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.54",
+    "@electron-forge/maker-zip": "6.0.0-beta.54",
+    "electron": "18.3.7",
+    "fork-ts-checker-webpack-plugin": "^8.0.0",
+    "node-fetch": "^2.6.9",
+    "typescript": "^4.9.5"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "main": "src/main/index.ts",
   "name": "macintosh.js",
   "productName": "macintosh.js",
-  "version": "1.1.0",
-  "description": "Macintosh's System 8 in an Electron app. I'm sorry.",
-  "main": "src/main/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -13,26 +40,6 @@
     "fix": "npx prettier --write src/{main,renderer}/*.{js,css}",
     "check-links": "node tools/check-links.js"
   },
-  "keywords": [],
-  "author": {
-    "name": "Felix Rieseberg",
-    "email": "felix@felixrieseberg.com"
-  },
-  "license": "MIT",
-  "config": {
-    "forge": "./forge.config.js"
-  },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.0",
-    "update-electron-app": "^2.0.1"
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "6.0.0-beta.54",
-    "@electron-forge/maker-deb": "6.0.0-beta.54",
-    "@electron-forge/maker-rpm": "6.0.0-beta.54",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.54",
-    "@electron-forge/maker-zip": "6.0.0-beta.54",
-    "electron": "18.3.7",
-    "node-fetch": "^2.6.1"
-  }
+  "type": "module",
+  "version": "1.1.0"
 }
